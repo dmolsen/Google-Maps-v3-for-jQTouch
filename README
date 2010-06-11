@@ -1,0 +1,20 @@
+This project aims to share a very simple example of Google Maps JavaScript API v3 working with revision 133 of jQTouch and jQuery 1.4. I do not currently have this demo working with revision 148 of jQTouch which is the absolute bleeding edge at the time of this writing. Some points to keep in mind:
+
+ - r133 is not the beta version linked from the main jQTouch site. It was the edge release when i started on my project. If you've been working off the beta the only change I think you'll have to make is to add a div with the ID of 'jqt' around your divs. Refer to the project to see an example.
+
+ - the project appears to handle rotation of the device after the map is loaded just fine. It does go a little wobbly if the device is rotated before the map is loaded. I still need to troubleshoot that.
+
+ - the project assumes map "pages" will be loaded via AJAX. Our system dynamically generates many maps so that's just how we're dealing with it.
+
+ - any "page" that will link to a map page needs to have the class clear-map-detail so the DOM is properly cleaned up after closing out the map. This reduces a "white flash" you could see as well as making future maps load properly.
+
+ - the notransform class in jqtouch.css is actually from r143 of jQTouch. I had had something similar but went with David's implementation from a later revision instead. This class makes the map draggable.
+
+To see a demo of this all working check out http://m.wvu.edu/ on your iPhone or Android device.
+
+Some more links:
+
+ - jQTouch: http://jqtouch.com/
+ - Google Maps JavaScript API v3: http://code.google.com/apis/maps/documentation/javascript/
+ - Mobile in Higher Ed: http://dmolsen.com/mobile-in-higher-ed/
+ - Mobile Web OSP: http://mobiwebosp.pbworks.com/
